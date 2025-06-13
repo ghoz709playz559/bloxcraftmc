@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BloxcraftMC - Staff Application</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    .hover-effect:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+    .transition {
+      transition: all 0.3s ease;
+    }
+    .active-nav {
+      background-color: #bfdbfe;
+      color: #1e3a8a;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-blue-100 to-blue-50 font-sans">
+  <div class="flex min-h-screen">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white shadow-xl rounded-xl m-4 p-4 space-y-4">
+      <div class="text-2xl font-bold text-center mb-6">
+        <img src="https://i.imgur.com/d8qx6iG.png" alt="Logo" class="mx-auto w-16 mb-2" />
+        BloxcraftMC
+      </div>
+      <nav class="space-y-2">
+        <a href="index.html" class="flex items-center space-x-3 p-2 rounded-xl hover:bg-blue-100 transition hover-effect">
+          <i class="fas fa-home"></i><span>Home</span>
+        </a>
+        <a href="forum.html" class="flex items-center space-x-3 p-2 rounded-xl hover:bg-blue-100 transition hover-effect">
+          <i class="fas fa-comments"></i><span>Forums</span>
+        </a>
+        <a href="members.html" class="flex items-center space-x-3 p-2 rounded-xl hover:bg-blue-100 transition hover-effect">
+          <i class="fas fa-users"></i><span>Members</span>
+        </a>
+        <a href="rules.html" class="flex items-center space-x-3 p-2 rounded-xl hover:bg-blue-100 transition hover-effect">
+          <i class="fas fa-info-circle"></i><span>Rules</span>
+        </a>
+        <a href="help.html" class="flex items-center space-x-3 p-2 rounded-xl bg-yellow-100 text-yellow-800 font-semibold hover-effect">
+          <i class="fas fa-question-circle"></i><span>Help</span>
+        </a>
+        <a href="store.html" class="flex items-center space-x-3 p-2 rounded-xl bg-pink-100 text-pink-800 font-semibold hover-effect">
+          <i class="fas fa-store"></i><span>Store</span>
+        </a>
+        <a href="staff-apply.html" class="flex items-center space-x-3 p-2 rounded-xl active-nav hover:bg-blue-100 transition hover-effect">
+          <i class="fas fa-user-shield"></i><span>Staff Apply</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6 space-y-6">
+      <!-- Topbar with IP and Login -->
+      <div class="flex justify-between items-center mb-6">
+        <input type="text" placeholder="Search..." class="border rounded-full px-4 py-2 w-1/2 shadow-inner" />
+        <div class="space-x-4 flex items-center">
+          <a href="#" class="bg-yellow-400 text-white px-4 py-2 rounded-full font-semibold shadow hover:bg-yellow-500 transition">BLOXCRAFTMC.MCSH.IO</a>
+          <a href="login.html" id="login-btn" class="bg-white px-4 py-2 rounded-full border shadow hover:bg-gray-100 transition">Log In</a>
+          <div id="user-info" class="inline-block"></div>
+        </div>
+      </div>
+
+      <!-- Hero Banner -->
+      <div class="bg-gradient-to-r from-blue-900 to-blue-700 text-white text-center p-6 rounded-2xl shadow">
+        <h1 class="text-3xl font-bold mb-2">🛑Apply for Staff</h1>
+        <p class="text-lg">Staff Applications are closed at this time</p>
+      </div>
+
+      <!-- Application Message and Button -->
+      <div class="bg-white p-6 rounded-2xl shadow max-w-2xl mx-auto text-center">
+        <p class="text-lg text-gray-700 mb-4">Thank you for your interest in joining the BloxcraftMC team. At this time, staff applications are closed and we are not accepting new submissions.</p>
+        <p class="text-lg text-gray-700 mb-4">Please check back later or stay updated through our Discord server for future opportunities. We appreciate your support and understanding!</p> 
+      </div>
+    </main>
+
+    <!-- Right Sidebar -->
+    <aside class="w-80 p-4 space-y-4">
+      <!-- Discord Widget -->
+      <div class="bg-indigo-600 text-white p-4 rounded-2xl shadow hover-effect">
+        <h3 class="text-lg font-bold">Discord</h3>
+        <p>Members Online</p>
+      </div>
+
+      <!-- Online Members -->
+      <div class="bg-white p-4 shadow rounded-2xl hover-effect">
+        <h3 class="font-bold mb-2">Team Online</h3>
+        <ul class="text-sm text-gray-700 space-y-1">
+          <li><span class="font-semibold text-blue-600">Thunder</span> - Moderator</li>
+          <li><span class="font-semibold text-purple-600">Nightmare</span> - QA</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyAZzo0Aj9B2Da4Ybzmk4HcR0fnRabUCCEc",
+      authDomain: "bloxcraftmc-forum.firebaseapp.com",
+      databaseURL: "https://bloxcraftmc-forum-default-rtdb.firebaseio.com",
+      projectId: "bloxcraftmc-forum",
+      storageBucket: "bloxcraftmc-forum.appspot.com",
+      messagingSenderId: "112308656471",
+      appId: "1:112308656471:web:ae1f1a2fd4aeb7de9bc612",
+      measurementId: "G-3E2Y73R0RK"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    auth.onAuthStateChanged(user => {
+      const userInfoDiv = document.getElementById("user-info");
+      const loginBtn = document.getElementById("login-btn");
+      if (user) {
+        loginBtn.style.display = 'none';
+        userInfoDiv.innerHTML = `<span class='text-white'>${user.email}</span> <button onclick="firebase.auth().signOut()" class="bg-white text-black px-3 py-1 rounded-full hover:bg-gray-200">Logout</button>`;
+      } else {
+        loginBtn.style.display = 'inline-block';
+        userInfoDiv.innerHTML = "";
+      }
+    });
+  </script>
+</body>
+</html>

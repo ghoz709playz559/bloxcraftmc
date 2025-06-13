@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fixed Layout</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden; /* prevents the whole page from scrolling */
+      font-family: sans-serif;
+    }
+    .container {
+      display: flex;
+      height: 100%;
+    }
+    .sidebar {
+      width: 250px;
+      background: #1e40af;
+      color: white;
+      padding: 20px;
+      position: fixed;
+      height: 100%;
+      left: 0;
+      top: 0;
+    }
+    .main {
+      margin-left: 250px; /* same as sidebar width */
+      padding: 20px;
+      height: 100%;
+      overflow-y: auto; /* only this part scrolls */
+      background: #f1f5f9;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <h2>Sidebar</h2>
+      <p>Fixed position</p>
+    </div>
+    <div class="main">
+      <h1>Scrollable Content</h1>
+      <p>Content goes here...</p>
+      <p>Scroll me</p>
+      <div style="height: 1500px;"></div>
+    </div>
+  </div>
+</body>
+</html>
