@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BloxcraftMC - Rules</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+    }
+    .scrollable-content {
+      height: 100vh;
+      overflow-y: auto;
+    }
+    .sticky-header {
+      position: sticky;
+      top: 0;
+      background: white;
+      z-index: 10;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 50;
+    }
+    .modal-content {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      max-width: 600px;
+      width: 90%;
+      max-height: 80vh;
+      overflow-y: auto;
+      box-shadow: 0 20px 25px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-blue-100 to-blue-50 font-sans">
+  <div class="modal" id="requirementsModal">
+    <div class="modal-content">
+      <h2 class="text-2xl font-bold mb-4">🛡️ Staff Application Requirements</h2>
+      <p class="mb-4 text-gray-700">Before applying, you must meet the following:</p>
+      <ul class="list-disc pl-5 space-y-2 text-gray-800">
+        <li>✅ Must be <strong>at least 13 years old</strong></li>
+        <li>✅ Must have a <strong>working microphone</strong> and access to Discord</li>
+        <li>✅ Must be <strong>fluent in English</strong></li>
+        <li>✅ Must not have <strong>recent punishments</strong> (bans/mutes)</li>
+        <li>✅ Must be <strong>active on the server (7+ hours/week)</strong></li>
+        <li>✅ Good <strong>communication and teamwork skills</strong></li>
+        <li>✅ Able to <strong>stay professional under pressure</strong></li>
+        <li>✅ Willing to use <strong>moderation tools</strong> and report bugs</li>
+        <li>❌ Not for those applying only for rank or power</li>
+        <li>❌ This is a <strong>volunteer position</strong>, not paid</li>
+        <li>❌ Abusing <strong>Staff Powers</strong> on the Server</li>
+        <li>❌ Not <strong>13+</strong></li>
+      </ul>
+      <div class="text-center mt-6">
+        <a href="https://forms.gle/1kWJWV93zX3cXQoq6" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-700 transition">Continue</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
